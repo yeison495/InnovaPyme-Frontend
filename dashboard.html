@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnovaPyme - Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-left">
+            <img src="images/Logo.png" alt="InnovaPyme" class="logo-img">
+            <span class="logo-text">InnovaPyme</span>
+        </div>
+        <div class="header-right">
+            <span class="username-text">Nombre usuario</span>
+            <img src="images/user.png" alt="User" class="header-icon">
+            <img src="images/settings.png" alt="User" class="header-icon">
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <img src="images/dashboard.png" alt="Dashboard" class="nav-icon"></img>
+                    <span>DashBoard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="images/ventas.png" alt="Ventas" class="nav-icon"></img>
+                    <span>Ventas</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="images/inventario.png" alt="Inventario" class="nav-icon"></img>
+                    <span>Inventario</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="images/historial.png" alt="Historial" class="nav-icon"></img>
+                    <span>Historial</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="images/clientes.png" alt="Clientes" class="nav-icon"></img>
+                    <span>Clientes</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="images/usuarios.png" alt="Usuarios" class="nav-icon"></img>
+                    <span>Usuarios</span>
+                </a>
+            </nav>
+            <button class="btn-salir" onclick="window.location.href='index.html'">
+                <img src="images/logout.png" alt="Salir" class="nav-icon"></img>
+                <span>Salir</span>
+            </button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="dashboard-content">
+                <h1 class="dashboard-title">DashBoard</h1>
+                
+                <!-- Top Row Widgets -->
+                <div class="widgets-row">
+                    <div class="widget">
+                        <h3 class="widget-title">Total ventas</h3>
+                        <p class="widget-value">$6.500.000</p>
+                        <canvas id="chartVentas"></canvas>
+                    </div>
+                    <div class="widget">
+                        <h3 class="widget-title">Total Gastos</h3>
+                        <p class="widget-value">$1.500.000</p>
+                        <canvas id="chartGastos"></canvas>
+                    </div>
+                    <div class="widget">
+                        <h3 class="widget-title">Total Saldo</h3>
+                        <p class="widget-value">$4.000.000</p>
+                        <canvas id="chartSaldo"></canvas>
+                    </div>
+                </div>
+
+                <!-- Middle Row Widgets -->
+                <div class="widgets-row">
+                    <div class="widget widget-pie">
+                        <h3 class="widget-title">Ventas por producto</h3>
+                        <div class="pie-chart-container">
+                            <canvas id="chartProductos"></canvas>
+                            <div class="pie-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #1E2A3B;"></span>
+                                    <span>Producto 1</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #F5B301;"></span>
+                                    <span>Producto 2</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #ffffff; border: 1px solid #ccc;"></span>
+                                    <span>Producto 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget widget-pie">
+                        <h3 class="widget-title">Ventas por Usuarios</h3>
+                        <div class="pie-chart-container">
+                            <canvas id="chartUsuarios"></canvas>
+                            <div class="pie-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #1E2A3B;"></span>
+                                    <span>Usuario 1</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #F5B301;"></span>
+                                    <span>Usuario 2</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #ffffff; border: 1px solid #ccc;"></span>
+                                    <span>Usuario 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget widget-table">
+                        <h3 class="widget-title">Ultimas Ventas</h3>
+                        <div class="table-content">
+                            <div class="table-container">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Usuario</th>
+                                            <th>Fecha</th>
+                                            <th>Detalle</th>
+                                            <th>Número</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Usuario</td><td>Fecha</td><td>Detalle</td><td>Número</td><td>Total</td></tr>
+                                        <tr><td>Usuario</td><td>Fecha</td><td>Detalle</td><td>Número</td><td>Total</td></tr>
+                                        <tr><td>Usuario</td><td>Fecha</td><td>Detalle</td><td>Número</td><td>Total</td></tr>
+                                        <tr><td>Usuario</td><td>Fecha</td><td>Detalle</td><td>Número</td><td>Total</td></tr>
+                                        <tr><td>Usuario</td><td>Fecha</td><td>Detalle</td><td>Número</td><td>Total</td></tr>
+                                        <tr><td>Usuario</td><td>Fecha</td><td>Detalle</td><td>Número</td><td>Total</td></tr>
+                                        <tr><td>Usuario</td><td>Fecha</td><td>Detalle</td><td>Número</td><td>Total</td></tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4" class="total-label">TOTAL</td>
+                                            <td class="total-value">$6.500.000</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                                <div class="pagination">
+                                    <span>&lt; Página 1 &gt;</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row Widget -->
+                <div class="widgets-row">
+                    <div class="widget widget-stock">
+                        <h3 class="widget-title">Stock</h3>
+                        <div class="stock-content">
+                            <div class="stock-table-container">
+                                <table class="stock-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Producto</th>
+                                            <th>Cantidad</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Item 1</td><td>45</td></tr>
+                                        <tr><td>Item 2</td><td>12</td></tr>
+                                        <tr><td>Item 3</td><td>38</td></tr>
+                                        <tr><td>Item 4</td><td>50</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="stock-chart-container">
+                                <canvas id="chartStock"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Configuración común para gráficos de barras
+        const barChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: { enabled: false }
+            },
+            scales: {
+                y: { display: false },
+                x: {
+                    ticks: { color: '#1E2A3B', font: { size: 10 } },
+                    grid: { display: false }
+                }
+            }
+        };
+
+        // Almacenar referencias a todos los gráficos
+        const charts = {};
+
+        // Gráfico de Ventas
+        charts.ventas = new Chart(document.getElementById('chartVentas'), {
+            type: 'bar',
+            data: {
+                labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4'],
+                datasets: [{
+                    data: [1500000, 1800000, 1600000, 1600000],
+                    backgroundColor: '#F5B301'
+                }]
+            },
+            options: barChartOptions
+        });
+
+        // Gráfico de Gastos
+        charts.gastos = new Chart(document.getElementById('chartGastos'), {
+            type: 'bar',
+            data: {
+                labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4'],
+                datasets: [{
+                    data: [400000, 350000, 400000, 350000],
+                    backgroundColor: '#F5B301'
+                }]
+            },
+            options: barChartOptions
+        });
+
+        // Gráfico de Saldo
+        charts.saldo = new Chart(document.getElementById('chartSaldo'), {
+            type: 'bar',
+            data: {
+                labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4'],
+                datasets: [{
+                    data: [1100000, 1450000, 1200000, 1250000],
+                    backgroundColor: '#F5B301'
+                }]
+            },
+            options: barChartOptions
+        });
+
+        // Gráfico de Productos (Pie)
+        charts.productos = new Chart(document.getElementById('chartProductos'), {
+            type: 'pie',
+            data: {
+                labels: ['Producto 1', 'Producto 2', 'Producto 3'],
+                datasets: [{
+                    data: [50, 30, 20],
+                    backgroundColor: ['#1E2A3B', '#F5B301', '#ffffff'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: false }
+                }
+            }
+        });
+
+        // Gráfico de Usuarios (Pie)
+        charts.usuarios = new Chart(document.getElementById('chartUsuarios'), {
+            type: 'pie',
+            data: {
+                labels: ['Usuario 1', 'Usuario 2', 'Usuario 3'],
+                datasets: [{
+                    data: [50, 30, 20],
+                    backgroundColor: ['#1E2A3B', '#F5B301', '#ffffff'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: false }
+                }
+            }
+        });
+
+        // Gráfico de Stock
+        charts.stock = new Chart(document.getElementById('chartStock'), {
+            type: 'bar',
+            data: {
+                labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4'],
+                datasets: [{
+                    data: [145, 150, 140, 145],
+                    backgroundColor: '#F5B301'
+                }]
+            },
+            options: barChartOptions
+        });
+
+        // Función para redimensionar todos los gráficos
+        function resizeCharts() {
+            // Forzar un reflow del layout
+            void document.body.offsetHeight;
+            
+            Object.values(charts).forEach(chart => {
+                if (chart) {
+                    // Destruir y recrear el gráfico si es necesario
+                    if (chart.canvas && chart.canvas.parentElement) {
+                        const canvas = chart.canvas;
+                        const ctx = canvas.getContext('2d');
+                        
+                        // Actualizar el tamaño del canvas
+                        canvas.style.width = '100%';
+                        canvas.style.height = 'auto';
+                        
+                        // Llamar a resize de Chart.js
+                        if (typeof chart.resize === 'function') {
+                            chart.resize();
+                        }
+                        
+                        // Forzar actualización
+                        chart.update('none');
+                    }
+                }
+            });
+        }
+
+        // Listener para el evento resize con debounce mejorado
+        let resizeTimeout;
+        let lastWidth = window.innerWidth;
+        
+        window.addEventListener('resize', function() {
+            const currentWidth = window.innerWidth;
+            
+            // Solo redimensionar si el cambio es significativo
+            if (Math.abs(currentWidth - lastWidth) > 50) {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(function() {
+                    resizeCharts();
+                    lastWidth = currentWidth;
+                }, 150);
+            }
+        });
+        
+        // También redimensionar cuando se carga la página
+        window.addEventListener('load', function() {
+            setTimeout(resizeCharts, 100);
+        });
+    </script>
+</body>
+</html>
+
