@@ -246,6 +246,7 @@ header {
     background-color: #F5B301;
     color: #1E2A3B;
     font-weight: bold;
+    margin-left: 15px;
 }
 
 .nav-icon {
@@ -313,7 +314,8 @@ header {
     color: #F5B301;
     font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 /* Widgets */
@@ -340,9 +342,10 @@ header {
 
 .widget-title {
     color: #1E2A3B;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .widget-value {
@@ -445,13 +448,18 @@ header {
     border-radius: 10px;
     padding: 12px;
     box-sizing: border-box;
+    text-align: center;
 }
+
 
 .data-table {
     width: 100%;
-    border-collapse: collapse;
+    border-spacing: 0;
     margin-bottom: 10px;
     flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .data-table thead {
@@ -465,6 +473,9 @@ header {
     font-size: 0.55rem;
     font-weight: bold;
     border-bottom: 2px solid rgba(30, 42, 59, 0.3);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .data-table td {
@@ -497,6 +508,77 @@ header {
     color: #1E2A3B;
 }
 
+.data-table-sales {
+    width: 100%;
+    border-spacing: 0;
+    margin-bottom: 10px;
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.data-table-sales thead {
+    background-color: #1E2A3B;
+    color: #ffffff;
+}
+
+.data-table-sales th {
+    padding: 6px 4px;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-bottom: 2px solid rgba(30, 42, 59, 0.3);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.data-table-sales td {
+    padding: 5px 4px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: #1E2A3B;
+    font-size: 1.2rem;
+    background-color: transparent;
+}
+
+.data-table-sales tbody tr:hover {
+    background-color: rgba(245, 179, 1, 0.2);
+}
+
+.data-table-sales tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.data-table-sales tbody tr:nth-child(even):hover {
+    background-color: rgba(245, 179, 1, 0.25);
+}
+
+.data-table-sales tfoot {
+    background-color: rgba(30, 42, 59, 0.1);
+    font-weight: bold;
+    border-top: 2px solid rgba(30, 42, 59, 0.3);
+}
+
+.data-table-sales tfoot td {
+    color: #1E2A3B;
+}
+
+
+
+.btn-add{
+    background-color: #586AC5;
+    color: #E7E7E7;
+    width: 115px;
+    float: right;
+    text-align: right;
+    padding: 5px 20px 5px 5px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+}
+
+
 .total-label {
     text-align: right;
     padding-right: 10px;
@@ -511,6 +593,13 @@ header {
     text-align: center;
     color: #1E2A3B;
     font-size: 0.55rem;
+    margin-top: 8px;
+}
+
+.pagination-sales {
+    text-align: center;
+    color: #1E2A3B;
+    font-size: 1.2rem;
     margin-top: 8px;
 }
 

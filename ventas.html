@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnovaPyme - Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="images/Logo.png" alt="InnovaPyme" class="img-fluid" width="50" height="50">
+                    <h1 class="navbar-brand-text">InnovaPyme</h1>
+                </a>
+                
+            </div>
+            <div class="header-right">
+                <span class="username-text">usuario123</span>
+                <img src="images/user.png" alt="User" class="header-icon">
+                <img src="images/settings.png" alt="User" class="header-icon">
+            </div>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <img src="images/dashboard.png" alt="Dashboard" class="nav-icon"></img>
+                    <span>DashBoard</span>
+                </a>
+                <a href="#" class="nav-item active">
+                    <img src="images/ventas.png" alt="Ventas" class="nav-icon"></img>
+                    <span>Ventas</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="images/inventario.png" alt="Inventario" class="nav-icon"></img>
+                    <span>Inventario</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="images/historial.png" alt="Historial" class="nav-icon"></img>
+                    <span>Historial</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="images/clientes.png" alt="Clientes" class="nav-icon"></img>
+                    <span>Clientes</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="images/usuarios.png" alt="Usuarios" class="nav-icon"></img>
+                    <span>Usuarios</span>
+                </a>
+            </nav>
+            <button class="btn-salir" onclick="window.location.href='index.html'">
+                <img src="images/logout.png" alt="Salir" class="nav-icon"></img>
+                <span>Salir</span>
+            </button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="dashboard-content">
+                <h1 class="dashboard-title">Ventas</h1>
+                <div class="option-bar">
+                    <div class="btn-add">
+                        <img src="images/add.png" alt="Agregar" class="nav-icon"></img>
+                        <span>Agregar</span>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="data-table-sales">
+                        <thead>
+                            <tr>
+                                <th>Usuario</th>
+                                <th>Fecha</th>
+                                <th>Detalle</th>
+                                <th>Número</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Usuario</td><td>Fecha</td><td>Detalle</td><td>Número</td><td>Total</td></tr>
+                            <tr><td>Usuario</td><td>Fecha</td><td>Detalle</td><td>Número</td><td>Total</td></tr>
+                            <tr><td>Usuario</td><td>Fecha</td><td>Detalle</td><td>Número</td><td>Total</td></tr>
+                            <tr><td>Usuario</td><td>Fecha</td><td>Detalle</td><td>Número</td><td>Total</td></tr>
+                            <tr><td>Usuario</td><td>Fecha</td><td>Detalle</td><td>Número</td><td>Total</td></tr>
+                            <tr><td>Usuario</td><td>Fecha</td><td>Detalle</td><td>Número</td><td>Total</td></tr>
+                            <tr><td>Usuario</td><td>Fecha</td><td>Detalle</td><td>Número</td><td>Total</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4" class="total-label">TOTAL</td>
+                                <td class="total-value">$6.500.000</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="pagination-sales">
+                        <img src="images/arrow_left.png" alt="Salir" class="nav-icon"></img>
+                        <span>Página 1</span>
+                        <img src="images/arrow_right.png" alt="Salir" class="nav-icon"></img>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="lib/graficos.js"></script>
+    <script>
+        // Listener para el evento resize con debounce mejorado
+        let resizeTimeout;
+        let lastWidth = window.innerWidth;
+        
+        window.addEventListener('resize', function() {
+            const currentWidth = window.innerWidth;
+            
+            // Solo redimensionar si el cambio es significativo
+            if (Math.abs(currentWidth - lastWidth) > 50) {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(function() {
+                    resizeCharts();
+                    lastWidth = currentWidth;
+                }, 150);
+            }
+        });
+        
+        // También redimensionar cuando se carga la página
+        window.addEventListener('load', function() {
+            setTimeout(resizeCharts, 100);
+        });
+    </script>
+</body>
+</html>
+
