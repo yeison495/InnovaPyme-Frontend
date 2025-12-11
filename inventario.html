@@ -38,11 +38,11 @@
                     <img src="images/dashboard.png" alt="Dashboard" class="nav-icon"></img>
                     <span>DashBoard</span>
                 </a>
-                <a href="#" class="nav-item active">
+                <a href="ventas.html" class="nav-item">
                     <img src="images/ventas.png" alt="Ventas" class="nav-icon"></img>
                     <span>Ventas</span>
                 </a>
-                <a href="inventario.html" class="nav-item">
+                <a href="#" class="nav-item active">
                     <img src="images/inventario.png" alt="Inventario" class="nav-icon"></img>
                     <span>Inventario</span>
                 </a>
@@ -68,8 +68,20 @@
         <!-- Main Content -->
         <main class="main-content">
             <div class="dashboard-content">
-                <h1 class="dashboard-title">Ventas</h1>
+                <h1 class="dashboard-title">Inventario</h1>
                 <div class="option-bar">
+                    <div class="bar-search">
+                        <img src="images/search.png" alt="Buscar" class="nav-icon"></img>
+                        <input type="text" class="input-search">
+                    </div>
+                    <div class="btn-edit">
+                        <img src="images/edit.png" alt="Modificar" class="nav-icon"></img>
+                        <span>Modificar</span>
+                    </div>
+                    <div class="btn-delete">
+                        <img src="images/delete.png" alt="Eliminar" class="nav-icon"></img>
+                        <span>Eliminar</span>
+                    </div>
                     <div class="btn-add">
                         <img src="images/add.png" alt="Agregar" class="nav-icon"></img>
                         <span>Agregar</span>
@@ -80,29 +92,29 @@
                         <thead>
                             <tr>
                                 <th>Número</th>
-                                <th>Fecha</th>
-                                <th>Detalle</th>
-                                <th>Usuario</th>
-                                <th>Cliente</th>
-                                <th>Cant items</th>
-                                <th>Total</th>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Tipo</th>
+                                <th>Cantidad</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>1</td><td>16/11/25</td><td>Detalle</td><td>Usuario 1</td><td>Cliente</td><td>20</td><td>Total</td></tr>
-                            <tr><td>2</td><td>16/11/25</td><td>Detalle</td><td>Usuario 1</td><td>Cliente</td><td>20</td><td>Total</td></tr>
-                            <tr><td>3</td><td>16/11/25</td><td>Detalle</td><td>Usuario 1</td><td>Cliente</td><td>20</td><td>Total</td></tr>
-                            <tr><td>4</td><td>16/11/25</td><td>Detalle</td><td>Usuario 1</td><td>Cliente</td><td>20</td><td>Total</td></tr>
-                            <tr><td>5</td><td>16/11/25</td><td>Detalle</td><td>Usuario 1</td><td>Cliente</td><td>20</td><td>Total</td></tr>
-                            <tr><td>6</td><td>16/11/25</td><td>Detalle</td><td>Usuario 1</td><td>Cliente</td><td>20</td><td>Total</td></tr>
-                            <tr><td>7</td><td>16/11/25</td><td>Detalle</td><td>Usuario 1</td><td>Cliente</td><td>20</td><td>Total</td></tr>
-                            <tr><td>8</td><td>16/11/25</td><td>Detalle</td><td>Usuario 1</td><td>Cliente</td><td>20</td><td>Total</td></tr>
+                            <tr><td>1</td><td><img src="images/image.png" alt="Imagen" class="nav-icon"></img></td><td>Producto</td><td>Descripción</td><td>Tipo</td><td>501</td></tr>
+                            <tr><td>2</td><td><img src="images/image.png" alt="Imagen" class="nav-icon"></img></td><td>Producto</td><td>Descripción</td><td>Tipo</td><td>1.250</td></tr>
+                            <tr><td>3</td><td><img src="images/image.png" alt="Imagen" class="nav-icon"></img></td><td>Producto</td><td>Descripción</td><td>Tipo</td><td>1.301</td></tr>
+                            <tr><td>4</td><td><img src="images/image.png" alt="Imagen" class="nav-icon"></img></td><td>Producto</td><td>Descripción</td><td>Tipo</td><td>2.110</td></tr>
+                            <tr><td>5</td><td><img src="images/image.png" alt="Imagen" class="nav-icon"></img></td><td>Producto</td><td>Descripción</td><td>Tipo</td><td>341</td></tr>
+                            <tr><td>6</td><td><img src="images/image.png" alt="Imagen" class="nav-icon"></img></td><td>Producto</td><td>Descripción</td><td>Tipo</td><td>115</td></tr>
+                            <tr><td>7</td><td><img src="images/image.png" alt="Imagen" class="nav-icon"></img></td><td>Producto</td><td>Descripción</td><td>Tipo</td><td>402</td></tr>
+                            <tr><td>8</td><td><img src="images/image.png" alt="Imagen" class="nav-icon"></img></td><td>Producto</td><td>Descripción</td><td>Tipo</td><td>998</td></tr>
+                            
                             
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="6" class="total-label">TOTAL</td>
-                                <td class="total-value">$6.500.000</td>
+                                <td colspan="5" class="total-label">TOTAL</td>
+                                <td class="total-value">7.018</td>
                             </tr>
                         </tfoot>
                     </table>
