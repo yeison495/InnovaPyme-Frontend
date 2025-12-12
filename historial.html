@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InnovaPyme - Inventario</title>
+    <title>InnovaPyme - Historial</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -42,11 +42,11 @@
                     <img src="images/ventas.png" alt="Ventas" class="nav-icon"></img>
                     <span>Ventas</span>
                 </a>
-                <a href="#" class="nav-item active">
+                <a href="inventario.html" class="nav-item">
                     <img src="images/inventario.png" alt="Inventario" class="nav-icon"></img>
                     <span>Inventario</span>
                 </a>
-                <a href="historial.html" class="nav-item">
+                <a href="#" class="nav-item active">
                     <img src="images/historial.png" alt="Historial" class="nav-icon"></img>
                     <span>Historial</span>
                 </a>
@@ -68,53 +68,84 @@
         <!-- Main Content -->
         <main class="main-content">
             <div class="dashboard-content">
-                <h1 class="dashboard-title">Inventario</h1>
+                <h1 class="dashboard-title">Historial</h1>
                 <div class="option-bar">
-                    <button class="bar-search">
-                        <img src="images/search.png" alt="Buscar" class="nav-icon"></img>
-                        <input type="text" class="input-search" placeholder="">
-                    </button>
-                    <button class="btn-edit">
-                        <img src="images/edit.png" alt="Modificar" class="nav-icon"></img>
-                        <span>Modificar</span>
-                    </button>
-                    <button class="btn-delete">
-                        <img src="images/delete.png" alt="Eliminar" class="nav-icon"></img>
-                        <span>Eliminar</span>
-                    </button>
-                    <button class="btn-add">
-                        <img src="images/add.png" alt="Agregar" class="nav-icon"></img>
-                        <span>Agregar</span>
-                    </button>
+                    <form action="">
+                        <div class="filters-bar">
+                          <div class="filter-group">
+                            <div class="type-filter">
+                              <span>Tipo</span>
+                              <select class="form-select">
+                                <option selected>Selecciona</option>
+                                <option value="Ventas">Ventas</option>
+                                <option value="Inventario">Inventario</option>
+                                <option value="Clientes">Clientes</option>
+                                <option value="Usuarios">Usuarios</option>
+                                <option value="Gastos">Gastos</option>
+                              </select>
+                            </div>
+                      
+                            <div class="date-init-filter">
+                              <span>Fecha inicial</span>
+                              <input type="date" class="form-control">
+                            </div>
+                      
+                            <div class="date-end-filter">
+                              <span>Fecha final</span>
+                              <input type="date" class="form-control">
+                            </div>
+                      
+                            <div class="number-filter">
+                              <span>Número</span>
+                              <input type="text" name="number" class="form-control">
+                            </div>
+                      
+                            <div class="name-filter">
+                              <span>Nombre</span>
+                              <input type="text" name="name" class="form-control">
+                            </div>
+                          </div>
+                      
+                          <div class="button-group">
+                            <button type="button" class="btn-cancel">
+                              <img src="images/cancel.png" alt="Cancelar" class="nav-icon">
+                              <span>Cancelar</span>
+                            </button>
+                      
+                            <button type="submit" class="btn-search">
+                              <img src="images/search_h.png" alt="Buscar" class="nav-icon">
+                              <span>Buscar</span>
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                      
                 </div>
                 <div class="table-container">
                     <table class="data-table-sales">
                         <thead>
                             <tr>
                                 <th>Número</th>
-                                <th>Imagen</th>
+                                <th>Fecha</th>
                                 <th>Nombre</th>
-                                <th>Descripción</th>
                                 <th>Tipo</th>
+                                <th>Entradas</th>
+                                <th>Salidas</th>
                                 <th>Cantidad</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>1</td><td><img src="images/image.png" alt="Imagen" class="nav-icon"></img></td><td>Producto</td><td>Descripción</td><td>Tipo</td><td>501</td></tr>
-                            <tr><td>2</td><td><img src="images/image.png" alt="Imagen" class="nav-icon"></img></td><td>Producto</td><td>Descripción</td><td>Tipo</td><td>1.250</td></tr>
-                            <tr><td>3</td><td><img src="images/image.png" alt="Imagen" class="nav-icon"></img></td><td>Producto</td><td>Descripción</td><td>Tipo</td><td>1.301</td></tr>
-                            <tr><td>4</td><td><img src="images/image.png" alt="Imagen" class="nav-icon"></img></td><td>Producto</td><td>Descripción</td><td>Tipo</td><td>2.110</td></tr>
-                            <tr><td>5</td><td><img src="images/image.png" alt="Imagen" class="nav-icon"></img></td><td>Producto</td><td>Descripción</td><td>Tipo</td><td>341</td></tr>
-                            <tr><td>6</td><td><img src="images/image.png" alt="Imagen" class="nav-icon"></img></td><td>Producto</td><td>Descripción</td><td>Tipo</td><td>115</td></tr>
-                            <tr><td>7</td><td><img src="images/image.png" alt="Imagen" class="nav-icon"></img></td><td>Producto</td><td>Descripción</td><td>Tipo</td><td>402</td></tr>
-                            <tr><td>8</td><td><img src="images/image.png" alt="Imagen" class="nav-icon"></img></td><td>Producto</td><td>Descripción</td><td>Tipo</td><td>998</td></tr>
-                            
-                            
+                            <tr><td>1</td><td>01/11/25</td><td>Producto</td><td>Tipo</td><td>2.250</td><td>1.000</td><td>1.250</td></tr>
+                            <tr><td>2</td><td>02/11/25</td><td>Producto</td><td>Tipo</td><td>1.601</td><td>300</td><td>1.301</td></tr>
+                            <tr><td>3</td><td>03/11/25</td><td>Producto</td><td>Tipo</td><td>2.250</td><td>1.000</td><td>1.250</td></tr>
+                            <tr><td>4</td><td>04/11/25</td><td>Producto</td><td>Tipo</td><td>2.250</td><td>1.000</td><td>1.250</td></tr>
+                            <tr><td>5</td><td>05/11/25</td><td>Producto</td><td>Tipo</td><td>2.250</td><td>1.000</td><td>1.250</td></tr>
+                            <tr><td>6</td><td>06/11/25</td><td>Producto</td><td>Tipo</td><td>2.250</td><td>1.000</td><td>1.250</td></tr>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="5" class="total-label">TOTAL</td>
-                                <td class="total-value">7.018</td>
+                                <td colspan="6" class="total-label">TOTAL</td>
+                                <td class="total-value">$6.500.000</td>
                             </tr>
                         </tfoot>
                     </table>

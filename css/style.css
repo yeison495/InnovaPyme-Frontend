@@ -443,6 +443,12 @@ header {
     align-items: center;
 }
 
+.option-bar{
+    border-radius: 10px;
+    background-color: #E7E7E7;
+    margin-bottom: 10px;
+}
+
 .table-container {
     display: flex;
     flex-direction: column;
@@ -578,6 +584,8 @@ header {
     margin: 5px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    border: none;
+    outline: none;
 }
 
 .input-search{
@@ -594,6 +602,8 @@ header {
     margin: 5px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    border: none;
+    outline: none;
 }
 
 .btn-delete{
@@ -606,6 +616,8 @@ header {
     margin: 5px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    border: none;
+    outline: none;
 }
 
 .btn-edit{
@@ -618,6 +630,147 @@ header {
     margin: 5px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    border: none;
+    outline: none;
+}
+
+.filters-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.filter-group input,
+.filter-group select {
+    height: 30px;        /* default ~38px */
+    font-size: 13px;
+    padding: 4px 8px;
+}
+
+.type-filter input{
+    width: 80px;
+}
+
+/* Barra completa: filtros a la izquierda, botones a la derecha */
+.filter-group{
+    display: flex;
+    flex-wrap: wrap;      /* permite saltar de línea si no cabe */
+    gap: 12px 20px;
+    padding: 8px;
+}
+  
+.filter-group > div{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+  .filter-group span{
+    min-width: 70px;     /* mismo ancho para todos los labels */
+    text-align: left;
+    color: #fff;         /* o el color que estés usando */
+    font-size: 14px;
+  }
+  
+  /* Anchitos parecidos a tu mock */
+  .type-filter { min-width: 140px; }
+  .date-init-filter, .date-end-filter { min-width: 130px; }
+  .number-filter, .name-filter { min-width: 130px; }
+  
+
+
+.type-filter {
+    background-color: #1E2A3B;
+    color: #E7E7E7;
+    display: flex;
+    align-items: center;   /* alineación vertical bonita */
+    gap: 10px;  
+    padding: 5px;   
+    width: 190px;
+    border-radius: 5px;        /* espacio entre el texto y el select */
+}
+
+.date-init-filter {
+    background-color: #1E2A3B;
+    color: #E7E7E7;
+    display: flex;
+    align-items: center;   /* alineación vertical bonita */
+    gap: 10px;  
+    padding: 5px;   
+    border-radius: 5px;        /* espacio entre el texto y el select */
+}
+
+.date-end-filter {
+    background-color: #1E2A3B;
+    color: #E7E7E7;
+    display: flex;
+    align-items: center;   /* alineación vertical bonita */
+    gap: 10px;  
+    padding: 5px;   
+    border-radius: 5px;        /* espacio entre el texto y el select */
+}
+
+.number-filter {
+    background-color: #1E2A3B;
+    color: #E7E7E7;
+    display: flex;
+    align-items: center;   /* alineación vertical bonita */
+    gap: 10px;  
+    padding: 5px;   
+    border-radius: 5px;        /* espacio entre el texto y el select */
+}
+
+.name-filter {
+    background-color: #1E2A3B;
+    color: #E7E7E7;
+    display: flex;
+    align-items: center;   /* alineación vertical bonita */
+    gap: 10px;  
+    padding: 5px;   
+    border-radius: 5px;        /* espacio entre el texto y el select */
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;  /* pone uno encima del otro */
+    align-items: flex-end;   /* los pega a la derecha */
+    gap: 1px;    
+    padding-bottom: 5px; 
+    padding-top: 5px;        /* espacio entre los botones */
+}
+
+
+.btn-cancel {
+    background-color: #DE5846;
+    color: #E7E7E7;
+    width: 115px;
+    float: right;
+    text-align: right;
+    padding: 5px 20px 5px 5px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    border: none;
+    outline: none;
+    z-index: 2;   /* botón rojo arriba */
+}
+
+.btn-search {
+    background-color: #586AC5;
+    color: #E7E7E7;
+    width: 115px;
+    float: right;
+    text-align: right;
+    padding: 5px 20px 5px 5px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    border: none;
+    outline: none;
+    z-index: 1;   /* botón azul abajo */
+    top: 8px;     /* lo bajas un poquito para que el rojo tape */
 }
 
 .resaltar {
